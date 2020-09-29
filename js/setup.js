@@ -44,28 +44,28 @@ const COLORS_FOR_EYES = [
 
 
 const getRandom = function (arr) {
-  return  arr[Math.floor(Math.random() * arr.length)];
+  return arr[Math.floor(Math.random() * arr.length)];
 };
 
 let heroes = [];
 const getHero = function (names, surnames, colorCloack, colorEyes) {
 
-    for (let i = 0; i < 3; i++) {
-        heroes[i] = {
-          name: getRandom(names) + ` ` + getRandom(surnames),
-          coatColor: getRandom(colorCloack),
-          eyesColor: getRandom(colorEyes)
-      };
+  for (let i = 0; i < 3; i++) {
+    heroes[i] = {
+      name: getRandom(names) + ` ` + getRandom(surnames),
+      coatColor: getRandom(colorCloack),
+      eyesColor: getRandom(colorEyes)
+    };
     heroes.push(heroes[i]);
-    }
-    return heroes;
-}
+  }
+  return heroes;
+};
 
-heroes = getHero (
-  LIST_NAMES,
-  LIST_SURNAMES,
-  COLORS_FOR_CLOACKS,
-  COLORS_FOR_EYES
+heroes = getHero(
+    LIST_NAMES,
+    LIST_SURNAMES,
+    COLORS_FOR_CLOACKS,
+    COLORS_FOR_EYES
 );
 
 
@@ -73,7 +73,7 @@ const similarListElement = document.querySelector(`.setup-similar-list`);
 const similarWizardTemplate = document.querySelector(`#similar-wizard-template`).content.querySelector(`.setup-similar-item`);
 
 
-heroes.forEach(function (hero){
+heroes.forEach(function (hero) {
   const wizardElement = similarWizardTemplate.cloneNode(true);
 
   wizardElement.querySelector(`.setup-similar-label`).textContent = hero.name;
