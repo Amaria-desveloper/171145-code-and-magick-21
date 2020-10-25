@@ -1,7 +1,9 @@
+'use strict';
+
 (function () {
   window.util = {
-    getRandom (arr) {
+    "getRandom": function (arr) {
       return arr[Math.floor(Math.random() * arr.length)];
     }
-  }
+  };
 })();

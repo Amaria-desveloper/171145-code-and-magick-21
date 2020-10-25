@@ -1,3 +1,5 @@
+'use strict';
+
 window.popupButtonControl = (function () {
   const setupOpen = document.querySelector(`.setup-open`);
   const setupClose = window.setup.querySelector(`.setup-close`);
@@ -10,13 +12,13 @@ window.popupButtonControl = (function () {
   };
 
   const openPopup = function () {
-    setup.classList.remove(`hidden`);
+    window.setup.classList.remove(`hidden`);
 
     document.addEventListener(`keydown`, onPopupEscPress);
   };
 
   const closePopup = function () {
-    setup.classList.add(`hidden`);
+    window.setup.classList.add(`hidden`);
 
     document.removeEventListener(`keydown`, onPopupEscPress);
   };

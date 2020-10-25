@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
   window.constants = {
     LIST_NAMES: [
@@ -46,5 +48,5 @@
       `#e848d5`,
       `#e6e848`
     ]
-  }
+  };
 })();

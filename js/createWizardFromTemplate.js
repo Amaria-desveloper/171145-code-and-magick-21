@@ -1,3 +1,5 @@
+'use strict';
+
 (function () {
   window.createWizardFromTemplate = function (template, data) {
     let fragment = document.createDocumentFragment();
@@ -8,6 +10,6 @@
       element.querySelector(`.wizard-eyes`).style.fill = data[i].eyesColor;
       fragment.appendChild(element);
     }
-      return fragment;
-  }
+    return fragment;
+  };
 })();
