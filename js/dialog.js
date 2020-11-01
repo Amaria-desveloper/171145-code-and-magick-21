@@ -2,7 +2,7 @@
 
 (function () {
 
-  const dialogWindow = window.setup.querySelector(`.setup-title`);
+  const dialogWindow = window.setup.querySelector(`.upload`);
 
   dialogWindow.addEventListener(`mousedown`, function (evt) {
     evt.preventDefault();
@@ -12,8 +12,12 @@
       y: evt.clientY
     };
 
+    let dragged = false;
+
     const onMouseMove = function (moveEvt) {
       moveEvt.preventDefault();
+
+      dragged = true;
 
       const shift = {
         x: initialCoordinates.x - moveEvt.clientX,
@@ -34,6 +38,14 @@
 
       document.removeEventListener(`mousemove`, onMouseMove);
       document.removeEventListener(`mouseup`, onMouseUp);
+
+      if (dragged) {
+        const onClickPreventDefault = function (clickEvt) {
+          clickEvt.preventDefault();
+          dialogWindow.removeEventListener(`click`, onClickPreventDefault);
+        };
+        dialogWindow.addEventListener(`click`, onClickPreventDefault);
+      }
     };
 
     document.addEventListener(`mousemove`, onMouseMove);

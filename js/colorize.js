@@ -1,5 +1,7 @@
 'use strict';
-
+/*
+* Отвечает за смену цвета плаща, глаз, файербола
+*/
 (function () {
   const setup = document.querySelector(`.setup`);
   window.setup = setup;
