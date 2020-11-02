@@ -1,5 +1,7 @@
 'use strict';
-
+/*
+* возвращает цвет из констант
+*/
 (function () {
   window.setColorFor = {
     "coat": function (element) {

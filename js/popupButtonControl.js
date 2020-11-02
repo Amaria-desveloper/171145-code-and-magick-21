@@ -1,5 +1,7 @@
 'use strict';
-
+/*
+* Открыть/закрыть попап
+*/
 window.popupButtonControl = (function () {
   const setupOpen = document.querySelector(`.setup-open`);
   const setupClose = window.setup.querySelector(`.setup-close`);
@@ -25,12 +27,6 @@ window.popupButtonControl = (function () {
 
   setupOpen.addEventListener(`click`, function () {
     openPopup();
-  });
-
-  setupOpen.addEventListener(`keydown`, function (evt) {
-    if (evt.key === `Enter`) {
-      openPopup();
-    }
   });
 
   setupClose.addEventListener(`click`, function () {
